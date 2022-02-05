@@ -33,6 +33,6 @@ hour_to_filter = st.slider('hour', 0, 23, 17)
 filtered_data = data[data[DATE_COLUMN].dt.hour == hour_to_filter]
 
 st.subheader('Map of all pickups at %s:00' % hour_to_filter)
-st.map(filtered_data)
+my_loc = pd.DataFrame({"Latitude":17.50609218738898,"Longitude": 78.408759753968})
+st.map(my_loc)
 
-st.text(data)
