@@ -37,6 +37,10 @@ st.code ('%s'%usc_no[option_usc])
 if st.button('Pay Electricity Bill'):
     webbrowser.open_new_tab(url)
 
+
+link = '[GitHub](http://github.com)'
+st.markdown(link, unsafe_allow_html=True)
+
 add_selectbox = st.sidebar.selectbox(
     "How would you like to be contacted?",
     ("Email", "Home phone", "Mobile phone")
