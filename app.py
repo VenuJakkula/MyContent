@@ -14,7 +14,7 @@ st.subheader('My Home Map')
 my_loc = pd.DataFrame({"lat":[17.50609218738898], "lon": [78.408759753968]})
 
 st.map(my_loc)
-st.text("[Pay Electricity Bill](https://paytm.com/electricity-bill-payment/telangana/telangana-state-southern-power-distribution-company-ltd-tsspdcl)")
+#st.text("[Pay Electricity Bill](https://paytm.com/electricity-bill-payment/telangana/telangana-state-southern-power-distribution-company-ltd-tsspdcl)")
 
 url = "https://paytm.com/electricity-bill-payment/telangana/telangana-state-southern-power-distribution-company-ltd-tsspdcl"
 
@@ -23,6 +23,11 @@ option_usc = st.selectbox(
      ('Ground Floor', 'First Floor', 'Second Floor', 'Third Floor'))
 
 usc_no = {'Ground Floor':'TBD', 'First Floor':'112595405', 'Second Floor':'113095576', 'Third Floor':'111305145'}
-st.write('Copy this USC Number and paay using below link :', usc_no[option_usc])
+st.write('Copy this USC Number and pay using below link :', usc_no[option_usc])
 
 st.write("[Pay Electricity Bill](%s)" % url)
+
+add_selectbox = st.sidebar.selectbox(
+    "How would you like to be contacted?",
+    ("Email", "Home phone", "Mobile phone")
+)
