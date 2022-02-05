@@ -17,6 +17,4 @@ st.map(my_loc)
 st.text("[Pay Electricity Bill](https://paytm.com/electricity-bill-payment/telangana/telangana-state-southern-power-distribution-company-ltd-tsspdcl)")
 
 url = "https://paytm.com/electricity-bill-payment/telangana/telangana-state-southern-power-distribution-company-ltd-tsspdcl"
-st.write("check out this [link](%s)" % url)
-
-st.markdown("check out this [link](%s)" % url)
+st.write("[Pay Electricity Bill](%s)" % url)
