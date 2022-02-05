@@ -2,6 +2,9 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 from PIL import Image
+import webbrowser
+
+
 image = Image.open('venu.jpg')
 
 
@@ -30,7 +33,10 @@ usc_no = {'Ground Floor':'113095577', 'First Floor':'112595405', 'Second Floor':
 st.write('Copy this USC Number: **%s**  and [Pay Electricity Bill here](%s)'%(usc_no[option_usc],url))
 
 #st.write("[Pay Electricity Bill here](%s)" % url)
-st.code ('blabla')
+st.code ('%s'%usc_no[option_usc])
+if st.button('Pay Electricity Bill'):
+    webbrowser.open_new_tab(url)
+
 add_selectbox = st.sidebar.selectbox(
     "How would you like to be contacted?",
     ("Email", "Home phone", "Mobile phone")
