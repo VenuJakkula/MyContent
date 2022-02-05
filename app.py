@@ -1,8 +1,15 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
+from PIL import Image
+image = Image.open('venu.jpg')
+
 
 st.title('Welcome World!')
+
+# My Image
+st.image(image, caption='This is me in building the project')
+
 
 DATE_COLUMN = 'date/time'
 DATA_URL = ('https://s3-us-west-2.amazonaws.com/'
@@ -16,23 +23,16 @@ def load_data(nrows):
     data[DATE_COLUMN] = pd.to_datetime(data[DATE_COLUMN])
     return data
 
-data_load_state = st.text('Loading data...')
+
 data = load_data(10000)
-data_load_state.text("Done! (using st.cache)")
 
 if st.checkbox('Show raw data'):
     st.subheader('Raw data')
     st.write(data)
 
-st.subheader('Number of pickups by hour')
-hist_values = np.histogram(data[DATE_COLUMN].dt.hour, bins=24, range=(0,24))[0]
-st.bar_chart(hist_values)
 
-# Some number in the range 0-23
-hour_to_filter = st.slider('hour', 0, 23, 17)
-filtered_data = data[data[DATE_COLUMN].dt.hour == hour_to_filter]
-
-st.subheader('Map of all pickups at %s:00' % hour_to_filter)
+st.subheader('Map')
 my_loc = pd.DataFrame({"Latitude":17.50609218738898,"Longitude": 78.408759753968})
 st.map(my_loc)
 
+st.text(data)
