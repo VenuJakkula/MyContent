@@ -15,3 +15,4 @@ my_loc = pd.DataFrame({"lat":[17.50609218738898], "lon": [78.408759753968]})
 
 st.map(my_loc)
 st.text("Pay Electricity Bill here: https://paytm.com/electricity-bill-payment/telangana/telangana-state-southern-power-distribution-company-ltd-tsspdcl")
+st.button(label, on_click="https://paytm.com/electricity-bill-payment/telangana/telangana-state-southern-power-distribution-company-ltd-tsspdcl")
