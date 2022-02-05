@@ -26,7 +26,7 @@ option_usc = st.selectbox(
      'Select The Floor and Copy the USC Number to pay the Electricity Bill on Paytm',
      ('Ground Floor', 'First Floor', 'Second Floor', 'Third Floor'))
 
-usc_no = {'Ground Floor':'TBD', 'First Floor':'112595405', 'Second Floor':'113095576', 'Third Floor':'111305145'}
+usc_no = {'Ground Floor':'113095577', 'First Floor':'112595405', 'Second Floor':'113095576', 'Third Floor':'111305145','Shop':'107922449'}
 st.write('Copy this USC Number: **%s**  and [Pay Electricity Bill here](%s)'%(usc_no[option_usc],url))
 
 #st.write("[Pay Electricity Bill here](%s)" % url)
