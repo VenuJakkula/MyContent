@@ -17,4 +17,12 @@ st.map(my_loc)
 st.text("[Pay Electricity Bill](https://paytm.com/electricity-bill-payment/telangana/telangana-state-southern-power-distribution-company-ltd-tsspdcl)")
 
 url = "https://paytm.com/electricity-bill-payment/telangana/telangana-state-southern-power-distribution-company-ltd-tsspdcl"
+
+option_usc = st.selectbox(
+     'Select The Floor and Copy the USC Number to pay the Electricity Bill on Paytm',
+     ('Ground Floor', 'First Floor', 'Second Floor', 'Third Floor'))
+
+usc_no = {'Ground Floor':'TBD', 'First Floor':'112595405', 'Second Floor':'113095576', 'Third Floor':'111305145'}
+st.write('Copy this USC Number and paay using below link :', usc_no[option_usc])
+
 st.write("[Pay Electricity Bill](%s)" % url)
