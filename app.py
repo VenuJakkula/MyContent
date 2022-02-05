@@ -27,7 +27,7 @@ option_usc = st.selectbox(
      ('Ground Floor', 'First Floor', 'Second Floor', 'Third Floor'))
 
 usc_no = {'Ground Floor':'TBD', 'First Floor':'112595405', 'Second Floor':'113095576', 'Third Floor':'111305145'}
-st.write('Copy this *%s* USC Number and [Pay Electricity Bill here](%s)'%usc_no[option_usc],%url)
+st.write('Copy this %s USC Number and [Pay Electricity Bill here](%s)'%usc_no[option_usc],%url)
 
 #st.write("[Pay Electricity Bill here](%s)" % url)
 
