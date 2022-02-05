@@ -32,7 +32,7 @@ if st.checkbox('Show raw data'):
 
 
 st.subheader('Map')
-my_loc = pd.DataFrame({"Latitude":17.50609218738898,"Longitude": 78.408759753968})
+my_loc = pd.DataFrame({"Latitude":[17.50609218738898],"Longitude": [78.408759753968]})
 #st.map(my_loc)
 
 st.text(data)
