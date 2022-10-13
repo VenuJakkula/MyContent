@@ -8,7 +8,7 @@ import webbrowser
 image = Image.open('venu.jpg')
 
 
-st.title('Welcome World!')
+st.title('Welcome World! Welcome')
 
 # My Image
 st.image(image, caption='This is me in building the project')
@@ -23,7 +23,7 @@ st.header('Electricity Bill Essentials')
 
 #st.text("[Pay Electricity Bill](https://paytm.com/electricity-bill-payment/telangana/telangana-state-southern-power-distribution-company-ltd-tsspdcl)")
 
-url = "https://paytm.com/electricity-bill-payment/telangana/telangana-state-southern-power-distribution-company-ltd-tsspdcl"
+url = "https://www.google.com/"
 
 option_usc = st.selectbox(
      'Select The Floor and Copy the USC Number to pay the Electricity Bill on Paytm',
