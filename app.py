@@ -3,7 +3,9 @@ import pandas as pd
 import numpy as np
 from PIL import Image
 import webbrowser
-
+import base64
+from streamlit_webrtc import webrtc_streamer, RTCConfiguration
+import av
 
 image = Image.open('venu.jpg')
 
@@ -45,3 +47,19 @@ add_selectbox = st.sidebar.selectbox(
     "How would you like to be contacted?",
     ("Email", "Home phone", "Mobile phone")
 )
+
+class VideoProcessor:
+	def recv(self, frame):
+		frm = frame.to_ndarray(format="bgr24")
+		#faces = cascade.detectMultiScale(cv2.cvtColor(frm, cv2.COLOR_BGR2GRAY), 1.1, 3)
+		#for x,y,w,h in faces:
+		#	cv2.rectangle(frm, (x,y), (x+w, y+h), (0,255,0), 3)
+		#cv2.putText(img=frm, text='Hello', org=(150, 250), fontFace=cv2.FONT_HERSHEY_TRIPLEX, fontScale=3, color=(0, 255, 0),thickness=3)
+
+		return av.VideoFrame.from_ndarray(frm, format='bgr24')
+
+webrtc_streamer(key="key", video_processor_factory=VideoProcessor,
+				rtc_configuration=RTCConfiguration(
+					{"iceServers": [{"urls": ["stun:stun.l.google.com:19302"]}]}
+					)
+	)
