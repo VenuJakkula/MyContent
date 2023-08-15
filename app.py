@@ -10,7 +10,7 @@ import av
 image = Image.open('venu.jpg')
 
 
-st.title('Welcome World! Welcome')
+st.title('Welcome World!')
 
 # My Image
 st.image(image, caption='This is me in building the project')
